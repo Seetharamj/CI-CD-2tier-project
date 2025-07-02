@@ -1,9 +1,8 @@
-output "ec2_public_ip" {
-  description = "Public IP of the EC2 instance"
-  value       = aws_instance.ec2_instance.public_ip
+variable "region" {
+  default = "us-east-1"
 }
 
-output "s3_bucket_name" {
+variable "bucket_name" {
   description = "Name of the S3 bucket"
-  value       = aws_s3_bucket.my_bucket.id
+  default     = "my-simple-s3-bucket-202012"
 }
