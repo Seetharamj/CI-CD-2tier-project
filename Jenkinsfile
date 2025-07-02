@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Clone Repository') {
       steps {
-        git 'https://github.com/your-username/ec2-s3-project.git'
+        git 'https://github.com/Seetharamj/CI-CD-2tier-project.git'
       }
     }
 
