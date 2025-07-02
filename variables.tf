@@ -3,6 +3,5 @@ variable "region" {
 }
 
 variable "bucket_name" {
-  description = "Name of the S3 bucket"
-  default     = "my-simple-s3-bucket-202012"
+  default = "my-s3-bucket-unique-202018" # must be globally unique!
 }
