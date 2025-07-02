@@ -1,8 +1,7 @@
-variable "region" {
-  default = "us-east-1"
+output "instance_id" {
+  value = aws_instance.example.id
 }
 
-variable "bucket_name" {
-  description = "Name of the S3 bucket"
-  default     = "my-simple-s3-bucket-202012"
+output "s3_bucket_name" {
+  value = aws_s3_bucket.example.bucket
 }
