@@ -2,19 +2,13 @@ pipeline {
     agent any
 
     environment {
-        AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
-        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
-        TF_VAR_key_name = 'my-key'
+        AWS_ACCESS_KEY_ID     = credentials('AWS-ACCESS-KEY')
+        AWS_SECRET_ACCESS_KEY = credentials('AWS-SECRET-KEY')
+        TF_VAR_key_name       = 'my-key'
         TF_VAR_s3_bucket_name = 'unique-bucket-name-1234567'
     }
 
     stages {
-        stage('Checkout Code') {
-            steps {
-                git 'https://github.com/Seetharamj/CI-CD-2tier-project.git' 
-            }
-        }
-
         stage('Terraform Init') {
             steps {
                 sh 'terraform init'
@@ -30,7 +24,9 @@ pipeline {
 
     post {
         always {
-            archiveArtifacts artifacts: '**/*.tf', fingerprint: true
+            script {
+                archiveArtifacts artifacts: '**/*.tf', fingerprint: true
+            }
         }
     }
 }
