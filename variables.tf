@@ -1,9 +1,8 @@
-variable "key_name" {
-  description = "EC2 key pair name"
-  type        = string
+variable "region" {
+  default = "us-east-1"
 }
 
-variable "s3_bucket_name" {
-  description = "Globally unique S3 bucket name"
-  type        = string
+variable "bucket_name" {
+  description = "Name of the S3 bucket"
+  default     = "my-simple-s3-bucket-202012"
 }
