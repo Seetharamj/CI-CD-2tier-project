@@ -1,7 +1,9 @@
 output "ec2_public_ip" {
-  value = aws_instance.ec2_instance.public_ip
+  description = "Public IP of the EC2 instance"
+  value       = aws_instance.ec2_instance.public_ip
 }
 
 output "s3_bucket_name" {
-  value = aws_s3_bucket.my_bucket.id
+  description = "Name of the S3 bucket"
+  value       = aws_s3_bucket.my_bucket.id
 }
